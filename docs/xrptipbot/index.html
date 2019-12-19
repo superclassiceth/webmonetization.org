@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>XRP Tipbot · Web Monetization</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Use XRP Tip Bot to have your earnings paid out in XRP. The bot updates balances about every 30 minutes, so you won&#x27;t see payments right away."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="XRP Tipbot · Web Monetization"/><meta property="og:type" content="website"/><meta property="og:url" content="https://webmonetization.org/"/><meta property="og:description" content="Use XRP Tip Bot to have your earnings paid out in XRP. The bot updates balances about every 30 minutes, so you won&#x27;t see payments right away."/><meta property="og:image" content="https://webmonetization.org/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/fav-webmonetization.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/custom.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/wm-icon.svg" alt="Web Monetization"/><h2 class="headerTitleWithLogo">Web Monetization</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting-started" target="_self">Docs</a></li><li class=""><a href="/specification.html" target="_self">Specification</a></li><li class=""><a href="https://discourse.wicg.io/t/proposal-web-monetization-a-new-revenue-model-for-the-web/3785" target="_self">WICG Forum</a></li><li class=""><a href="https://github.com/interledger/webmonetization.org" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Wallets</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/getting-started">Quick start guide</a></li><li class="navListItem"><a class="navItem" href="/docs/api">JavaScript API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Examples</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/exclusive-content">Exclusive content</a></li><li class="navListItem"><a class="navItem" href="/docs/remove-ads">Remove ads</a></li><li class="navListItem"><a class="navItem" href="/docs/counter">Micropayment counter</a></li><li class="navListItem"><a class="navItem" href="/docs/start-stop">Start/stop monetization</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Explainer</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/explainer">Web Monetization</a></li><li class="navListItem"><a class="navItem" href="/docs/receiving">Receiving payments</a></li><li class="navListItem"><a class="navItem" href="/docs/sending">Sending payments</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Wallets</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/ilp-wallets">Digital wallets</a></li><li class="navListItem"><a class="navItem" href="/docs/gatehub">GateHub</a></li><li class="navListItem"><a class="navItem" href="/docs/stronghold">Stronghold</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/xrptipbot">XRP Tipbot</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">More</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/specification">Specification</a></li><li class="navListItem"><a class="navItem" href="/docs/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/resources">External resources</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">XRP Tipbot</h1></header><article><div><span><p>Use XRP Tip Bot to have your earnings paid out in XRP. The bot updates balances about every 30 minutes, so you won't see payments right away.</p>
+<h2><a class="anchor" aria-hidden="true" id="sign-in"></a><a href="#sign-in" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sign in</h2>
+<p>Go to <a href="https://www.xrptipbot.com/?login=do">XRP Tip Bot</a> and choose how you want to sign in.</p>
+<p><img src="/docs/assets/xrp-tipbot-01.png" alt="signin"></p>
+<h2><a class="anchor" aria-hidden="true" id="select-a-deposit-type"></a><a href="#select-a-deposit-type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Select a deposit type</h2>
+<ol>
+<li>Select <strong>Deposit</strong> from the top navigation bar.</li>
+<li>Select <strong>ILP</strong> (Interledger Protocol).</li>
+</ol>
+<p><img src="/docs/assets/xrp-tipbot-02.png" alt="deposittype"></p>
+<h2><a class="anchor" aria-hidden="true" id="get-your-payment-pointer"></a><a href="#get-your-payment-pointer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get your payment pointer</h2>
+<p>When you select the ILP deposit type you're provided a payment pointer. Copy it to your clipboard. A payment pointer is an identifier for your wallet that's safe to share with other sites. You can also add it to your own site by following the <a href="./getting-started">Quick Start Guide</a>.</p>
+<p><img src="/docs/assets/xrp-tipbot-03.png" alt="addpointer"></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/stronghold"><span class="arrow-prev">← </span><span>Stronghold</span></a><a class="docs-next button" href="/docs/specification"><span>Specification</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#sign-in">Sign in</a></li><li><a href="#select-a-deposit-type">Select a deposit type</a></li><li><a href="#get-your-payment-pointer">Get your payment pointer</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>WebMonetization.org</h5></div><div><h5>Navigation</h5><a href="/">Home</a><a href="/meta-tag">Meta Tag Generator</a></div><div><h5>Community</h5><a href="https://github.com/interledger/webmonetization.org" target="_blank" rel="noreferrer noopener">GitHub</a><a href="https://forum.interledger.org" target="_blank" rel="noreferrer noopener">ILP Forum</a><a href="https://discourse.wicg.io/t/proposal-web-monetization-a-new-revenue-model-for-the-web/3785" target="_blank" rel="noreferrer noopener">Web Platform Incubator Community Group</a><a href="https://interledger.org" target="_blank" rel="noreferrer noopener">Interledger</a></div><div><h5>Resources</h5><a href="/docs/getting-started.html">Docs</a><a href="/specification.html" target="_blank" rel="noreferrer noopener">Specification</a><a href="https://paymentpointers.org" target="_blank" rel="noreferrer noopener">Payment Pointers</a></div></section><section class="copyright"></section></footer></div></body></html>
