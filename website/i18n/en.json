@@ -37,6 +37,10 @@
         "title": "Digital Wallets",
         "sidebar_label": "Digital wallets"
       },
+      "overview-explainer": {
+        "title": "Explainer Overview",
+        "sidebar_label": "Overview"
+      },
       "receiving": {
         "title": "Web Monetization Receivers",
         "sidebar_label": "Receiving payments"
