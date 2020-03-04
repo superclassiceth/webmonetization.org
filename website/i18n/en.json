@@ -41,6 +41,10 @@
         "title": "Explainer Overview",
         "sidebar_label": "Overview"
       },
+      "privacy-explainer": {
+        "title": "Privacy Model",
+        "sidebar_label": "Privacy"
+      },
       "receiving": {
         "title": "Web Monetization Receivers",
         "sidebar_label": "Receiving payments"

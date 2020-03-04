@@ -64,6 +64,10 @@ protocol](https://interledger.org/rfcs/0027-interledger-protocol-4/) and the
 Monetization protocol and the proposed API. It is the API implemented by a Web
 Monetized browser and consumed by a Web Monetized site.
 
+[The Web Monetization privacy explainer](./privacy-explainer) walks through the
+privacy model of Web Monetization. It goes through the different actors
+involved and the information they can learn.
+
 ### Privacy Pass
 
 [The Privacy Pass protocol](https://privacypass.github.io/) defines a way for
